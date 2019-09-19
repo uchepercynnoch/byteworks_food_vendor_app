@@ -2,6 +2,7 @@ LOGIN
 Endpoint - http://localhost/login
 Request Type - POST
 Body of url could be x-wwww-form-urlencoded or form-data format, with parameters 'username' and 'password'.
+Where username is same as "customerUsername" and password "customerPassword".
 
 LOGOUT
 Request Type - GET
@@ -13,6 +14,15 @@ Request Type -POST
 This endpoint accepts json formatted data with keys "customerUsername","customerPassword","customerConfirmPassword","customerName",
 "customerLocation",and "customerPhoneNumber".
 The customer location is the ip address of the customer device.
+example:
+{
+"customerUsername":"uchenna",
+"customerPassword":"welcome",
+"customerConfirmPassword":"welcome",
+"customerName":"uchenna Nnochirionye",
+"customerLocation":"FCT",
+"customerPhoneNumber":"08068337414"
+}
 
 MENU
 Endpoint - http://localhost/api/menu
