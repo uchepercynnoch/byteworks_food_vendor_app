@@ -1,4 +1,4 @@
-package com.byteworks.devops.repositories;
+package com.byteworks.devops.repository;
 
 import com.byteworks.devops.entities.Customer;
 import com.byteworks.devops.entities.CustomerOrder;
@@ -21,7 +21,5 @@ public interface CustomRepository {
     CustomerOrder GET_CUSTOMER_ORDER(String orderId);
 
     FoodInformation FIND_FOOD(String foodCode);
-
-
 
 }

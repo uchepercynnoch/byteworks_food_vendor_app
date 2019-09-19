@@ -3,6 +3,7 @@ package com.byteworks.devops.entities;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "customer_order_details")
 public class CustomerOrderDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

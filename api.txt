@@ -1,0 +1,26 @@
+LOGIN
+Endpoint - http://localhost/login
+Request Type - POST
+Body of url could be x-wwww-form-urlencoded or form-data format, with parameters 'username' and 'password'.
+
+LOGOUT
+Request Type - GET
+Endpoint - http://localhost/logout
+
+SIGN UP
+Endpoint - http://localhost/register
+Request Type -POST
+This endpoint accepts json formatted data with keys "customerUsername","customerPassword","customerConfirmPassword","customerName",
+"customerLocation",and "customerPhoneNumber".
+The customer location is the ip address of the customer device.
+
+MENU
+Endpoint - http://localhost/api/menu
+Request Type - GET
+This endpoint lists all food delicacies in the menu with the prices. No parameters.
+
+ORDER
+Request Type - POST
+Endpoint - http://localhost/api/order/{code}
+
+Endpoint to order food with the code from menu.

@@ -5,8 +5,10 @@ import com.byteworks.devops.entities.Permission;
 import com.byteworks.devops.exceptions.CustomerAlreadyExistException;
 import com.byteworks.devops.exceptions.DataPersistFailureException;
 import com.byteworks.devops.exceptions.PasswordsNotMatchException;
-import com.byteworks.devops.repositories.CustomRepository;
-import com.byteworks.devops.repositories.CustomerRepository;
+import com.byteworks.devops.helpers.RegistrationStatus;
+import com.byteworks.devops.repository.CustomRepository;
+import com.byteworks.devops.repository.CustomerRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,6 +44,7 @@ public class RegistrationController {
     public ResponseEntity actionCreateCustomer(@RequestBody Customer customerCredentials, Customer customer) {
         Permission setCustomerRole = new Permission("USER", customerCredentials.getCustomerUsername());
         boolean isCustomerExist = customRepository.CUSTOMER_EXIST(customerCredentials.getCustomerUsername());
+        String registrationStatus;
         if (customerCredentials.getCustomerPassword() != null && customerCredentials.getCustomerConfirmPassword() != null && !customerCredentials.getCustomerPassword().equals(customerCredentials.getCustomerConfirmPassword())) {
             throw new PasswordsNotMatchException("Passwords do not match");
         } else if (isCustomerExist) {
@@ -52,11 +55,17 @@ public class RegistrationController {
             customer.setCustomerUsername(customerCredentials.getCustomerUsername());
             customer.setCustomerPassword(passwordEncoder.encode(customerCredentials.getCustomerPassword()));
             customer.setCustomerConfirmPassword(passwordEncoder.encode(customerCredentials.getCustomerConfirmPassword()));
+            customer.setCustomerName(customerCredentials.getCustomerName());
+            customer.setCustomerPhoneNumber(customerCredentials.getCustomerPhoneNumber());
+            customer.setCustomerLocation(customerCredentials.getCustomerLocation());
             customerRepository.save(customer);
+            ObjectMapper mapper = new ObjectMapper();
+            RegistrationStatus success = new RegistrationStatus(true);
+            registrationStatus = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(success);
         } catch (Exception e) {
             throw new DataPersistFailureException(e.getMessage());
         }
-        return new ResponseEntity(HttpStatus.CREATED);
+        return new ResponseEntity<>(registrationStatus, HttpStatus.CREATED);
     }
 
     @PostMapping(path = "/update_profile/{username}", consumes = "application/json", produces = "application/json")

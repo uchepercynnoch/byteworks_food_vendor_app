@@ -1,7 +1,7 @@
 package com.byteworks.devops.services;
 
 import com.byteworks.devops.entities.Customer;
-import com.byteworks.devops.repositories.CustomRepository;
+import com.byteworks.devops.repository.CustomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

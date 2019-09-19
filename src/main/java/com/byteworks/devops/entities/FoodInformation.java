@@ -3,6 +3,7 @@ package com.byteworks.devops.entities;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "food_information")
 public class FoodInformation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +14,7 @@ public class FoodInformation {
     @Column(name = "food_name")
     private String foodName;
     @Column(name = "food_price")
-    private int foodPrice;
+    private double foodPrice;
     @Column(name = "vendor_location")
     private String vendorLocation;
 
@@ -45,11 +46,11 @@ public class FoodInformation {
         this.foodName = foodName;
     }
 
-    public int getFoodPrice() {
+    public double getFoodPrice() {
         return foodPrice;
     }
 
-    public void setFoodPrice(int foodPrice) {
+    public void setFoodPrice(double foodPrice) {
         this.foodPrice = foodPrice;
     }
 

@@ -1,0 +1,42 @@
+[
+  {
+    "_class": "com.byteworks.devops.entities.FoodInformation",
+    "foodName": "Rice & Stew",
+    "foodPrice": 100.00,
+    "foodCode": "1001",
+    "vendorLocation": "192.168.1.100",
+    "foodId": 1
+  },
+  {
+    "_class": "com.byteworks.devops.entities.FoodInformation",
+    "foodName": "Jollof Rice",
+    "foodPrice": 150.00,
+    "foodCode": "1002",
+    "vendorLocation": "192.168.1.100",
+    "foodId": 2
+  },
+  {
+    "_class": "com.byteworks.devops.entities.FoodInformation",
+    "foodName": "Eba & Vegetable soup",
+    "foodPrice": 200.00,
+    "foodCode": "1003",
+    "vendorLocation": "192.168.1.100",
+    "foodId": 3
+  },
+  {
+    "_class": "com.byteworks.devops.entities.FoodInformation",
+    "foodName": "Pounded & Egusi soup",
+    "foodPrice": 250.00,
+    "foodCode": "1004",
+    "vendorLocation": "192.168.1.100",
+    "foodId": 4
+  },
+  {
+    "_class": "com.byteworks.devops.entities.FoodInformation",
+    "foodName": "Beans & Yam",
+    "foodPrice": 50.00,
+    "foodCode": "1005",
+    "vendorLocation": "192.168.1.100",
+    "foodId": 5
+  }
+]

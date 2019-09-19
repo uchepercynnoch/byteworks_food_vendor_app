@@ -3,7 +3,7 @@ package com.byteworks.devops.services;
 import com.byteworks.devops.entities.*;
 import com.byteworks.devops.models.Cart;
 import com.byteworks.devops.models.CartInformation;
-import com.byteworks.devops.repositories.CustomRepository;
+import com.byteworks.devops.repository.CustomRepository;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
